@@ -1,0 +1,31 @@
+<html>
+<head>
+   <title>Password Checking</title> 
+</head>
+<body>
+   <h1>Exercise 3: Password Checking</h1>
+   <br>
+   <label for="first">First Password: </label>
+   <input type="password" id = "first">
+   <br>
+   <label for="second">Second Password: </label>
+   <input type="password" id = "second">
+   <br>
+   <button onclick="checkPassword()">Validate Your Passwords</button>
+</body>
+<script>
+    function checkPassword(){
+        var password1 = document.getElementById("first").value; 
+        var password2 = document.getElementById("second").value;
+        if(password1 != password2){
+            alert("Passwords do not match!");
+        }
+        else if(password1.length<8){
+            alert("Password is not at least 8 characters");
+        }
+        else{
+            alert("Passwords match");
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,65 @@
+<html>
+ <head>
+    <title>CSS Font Control</title>
+    <style>
+        p {
+            background-color: rgb(0, 255, 0);
+            border-width: 5px;
+            border-color: rgb(0, 0, 0);
+            border-style: solid;
+        } 
+    </style>
+ </head>
+<body>
+<h1>Exercise 2: CSS Font Control</h1>
+   <p id="target">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, 
+   officia enim animi esse, deserunt id repudiandae totam dolorum qui autem 
+   reiciendis? Consequatur dolorum commodi blanditiis ex enim ea obcaecati. 
+   Laudantium.
+   </p> 
+   <form id="submissionForm">
+        <label for="BR">Border R(0-255): </label>
+        <input type="text" name="BR" id= "BR"value="">
+        <br>
+        <label for="BG">Border G(0-255): </label>
+        <input type="text" name="BG" id= "BG"value="">
+        <br>
+        <label for="BB">Border B(0-255): </label>
+        <input type="text" name="BB" id= "BB"value="">
+        <br>
+        <label for="BW">Border Width: </label>
+        <input type="text" name="BW" id= "BW"value="">
+        <br>
+        <label for="GR">Background R(0-255): </label>
+        <input type="text" name="GR" id= "GR"value="">
+        <br>
+        <label for="GG">Background G(0-255): </label>
+        <input type="text" name="GG" id= "GG"value="">
+        <br>
+        <label for="GB">Background B(0-255): </label>
+        <input type="text" name="GB" id= "GB"value="">
+        <br>
+        <button type="submit">Change the Color!</button>
+   </form>
+</body>
+<script>
+    const form = document.querySelector('form');
+    const target = document.querySelector('#target');
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const BR = document.getElementById("BR").value;
+        const BG = document.getElementById("BG").value;
+        const BB = document.getElementById("BB").value;
+        const BW = document.getElementById("BW").value;
+        const GR = document.getElementById("GR").value;
+        const GG = document.getElementById("GG").value;
+        const GB = document.getElementById("GB").value; 
+        const Bcolor =`rgb(${BR}, ${BG}, ${BB})`;
+        const Gcolor =`rgb(${GR}, ${GG}, ${GB})`;
+
+        target.style.borderColor = Bcolor;
+        target.style.borderWidth = BW + 'px';
+        target.style.backgroundColor = Gcolor;
+    });
+</script>
+</html>
